@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function userDoc() { return get(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function owner() { return signedIn() && userDoc().data.role == "owner"; }
+    function perm(p) { return signedIn() && (owner() || userDoc().data.permissions[p] == true); }
+
+    // Catalogue public : uniquement les produits non supprimés.
+    match /products/{id} {
+      allow read: if resource.data.deleted != true || owner();
+      allow create, update, delete: if perm("products");
+    }
+
+    // Réglages publics : lecture limitée. Écriture propriétaire/permission.
+    match /settings/{id} {
+      allow read: if id == "public";
+      allow write: if perm("settings");
+    }
+
+    // Commandes : un client anonyme peut créer, mais ne peut pas lire toutes les commandes.
+    match /orders/{id} {
+      allow create: if true;
+      allow read, update, delete: if perm("orders");
+    }
+
+    match /sales/{id} {
+      allow read, write: if perm("sales");
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || owner());
+      allow create, update, delete: if owner();
+    }
+
+    match /auditLogs/{id} {
+      allow read: if owner();
+      allow create: if signedIn();
+      allow update, delete: if false;
+    }
+
+    match /promotions/{id} {
+      allow read: if true;
+      allow write: if perm("promotions");
+    }
+
+    match /shippingZones/{id} {
+      allow read: if true;
+      allow write: if perm("shipping");
+    }
+  }
+}

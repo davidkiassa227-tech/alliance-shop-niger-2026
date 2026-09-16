@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#c9a227">
+  <meta name="description" content="ALLIANCE SHOP — Parfums • Chaussures • Mode">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>ALLIANCE SHOP</title>
+</head>
+<body>
+  <div id="app">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Accueil ALLIANCE SHOP">
+        <img src="assets/logo.svg" alt="ALLIANCE-PARFUM">
+        <span><b>ALLIANCE SHOP</b><small>Parfums • Chaussures • Mode</small></span>
+      </a>
+      <div class="header-actions">
+        <button class="icon-btn" data-action="search" aria-label="Rechercher">⌕</button>
+        <button class="icon-btn" data-action="favorites" aria-label="Favoris">♡ <i id="favCount">0</i></button>
+        <button class="icon-btn" data-action="cart" aria-label="Panier">🛒 <i id="cartCount">0</i></button>
+        <button class="icon-btn" data-action="account" aria-label="Compte">👤</button>
+      </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#home">🏠 Accueil</a>
+      <a href="#shop">🛍️ Boutique</a>
+      <a href="#about">👥 Qui sommes-nous ?</a>
+      <a href="#favorites">❤️ Favoris</a>
+      <a href="#cart">🛒 Panier</a>
+    </nav>
+
+    <main id="main"></main>
+
+    <footer>
+      <div><strong>ALLIANCE SHOP</strong><br>Parfums • Chaussures • Mode</div>
+      <div>📞 WhatsApp : <a id="footerWhatsapp" href="#">+227 88 66 57 62</a></div>
+      <div>© <span id="year"></span> ALLIANCE SHOP</div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <div id="modalRoot"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

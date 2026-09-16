@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Parfum Élégance",
+    "category": "Parfums",
+    "brand": "Alliance",
+    "volume": "100 ml",
+    "purchasePrice": 7000,
+    "price": 12000,
+    "salePrice": 0,
+    "stock": 10,
+    "reference": "PAR-001",
+    "images": [
+      "assets/product-placeholder.svg"
+    ],
+    "description": "Parfum élégant pour homme.",
+    "featured": true
+  },
+  {
+    "name": "Sneakers Classic",
+    "category": "Chaussures",
+    "brand": "Alliance",
+    "purchasePrice": 12000,
+    "price": 22000,
+    "salePrice": 19000,
+    "stock": 6,
+    "reference": "CHA-001",
+    "images": [
+      "assets/product-placeholder.svg"
+    ],
+    "description": "Chaussures confortables et modernes.",
+    "featured": true
+  },
+  {
+    "name": "Chemise Premium",
+    "category": "Vêtements",
+    "brand": "Alliance",
+    "purchasePrice": 8000,
+    "price": 15000,
+    "salePrice": 0,
+    "stock": 8,
+    "reference": "VET-001",
+    "images": [
+      "assets/product-placeholder.svg"
+    ],
+    "description": "Chemise moderne.",
+    "featured": true
+  },
+  {
+    "name": "Sac Urban",
+    "category": "Accessoires",
+    "brand": "Alliance",
+    "purchasePrice": 9000,
+    "price": 17000,
+    "salePrice": 15000,
+    "stock": 4,
+    "reference": "ACC-001",
+    "images": [
+      "assets/product-placeholder.svg"
+    ],
+    "description": "Sac pratique pour le quotidien.",
+    "featured": true
+  }
+]

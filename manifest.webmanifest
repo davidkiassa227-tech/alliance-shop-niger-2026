@@ -1,0 +1,10 @@
+{
+  "name":"ALLIANCE SHOP",
+  "short_name":"Alliance Shop",
+  "start_url":"./index.html#home",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#c9a227",
+  "description":"Parfums • Chaussures • Mode",
+  "icons":[{"src":"assets/logo.svg","sizes":"any","type":"image/svg+xml"}]
+}
